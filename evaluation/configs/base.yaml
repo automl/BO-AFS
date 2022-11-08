@@ -1,0 +1,45 @@
+defaults:
+  - slurm
+  - _self_
+  - dacbo
+  - bbob
+  - override hydra/launcher: submitit_slurm
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+wandb:
+  id: null
+  entity: benjamc
+  debug: false
+  group: paris2
+  job_type: eval
+  tags: []
+  notes: null
+  project: dacbo
+
+seed: 0
+n_eval_episodes: 1
+policy_id: null
+experiment: bbob
+# baseline: null
+# budget: 10
+# replay_what: dacbo
+# results_path: null  # Path to wandb rundir
+# instance_set_kwargs:
+#   instance_set_path: /home/benjamin/Dokumente/code/tmp/DAC-BO/instance_sets/synthetic_functions/SINC5_1_10_xyshift.csv
+
+# output_dir: /home/benjamin/Dokumente/code/tmp/DAC-BO/tmp/rollout
+# log_dir: /home/benjamin/Dokumente/code/tmp/DAC-BO/tmp/log
+
+# experiment: null
+# policy_name: DAC-BO
+# policy_id: ${results_path}
+# traincfg: null
+
+outdir: ./exp_sweep
+
+hydra:
+  run:
+    dir: ${outdir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${outdir}/${now:%Y-%m-%d}/${now:%H-%M-%S}

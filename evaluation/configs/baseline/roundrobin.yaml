@@ -1,0 +1,4 @@
+# @package _global_
+
+baseline: round robin
+policy_name: ${baseline}

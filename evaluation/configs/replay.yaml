@@ -1,0 +1,29 @@
+defaults:
+  - slurm
+  - _self_
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+
+n_eval_episodes: 100
+budget: 10
+replay_what: dacbo
+exp_path: /home/benjamin/Dokumente/code/tmp/DAC-BO/tmp/2022-04-22/12-16-49  # Path to dacbo model(s)
+rerun: true
+instance_set_kwargs:
+  instance_set_path: /home/benjamin/Dokumente/code/tmp/DAC-BO/instance_sets/synthetic_functions/SINC5_1_10_xyshift.csv
+
+group: replay
+output_dir: /home/benjamin/Dokumente/code/tmp/DAC-BO/tmp/rollout
+log_dir: /home/benjamin/Dokumente/code/tmp/DAC-BO/tmp/log
+
+experiment: null
+
+
+hydra:
+  run:
+    dir: ${log_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${log_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+

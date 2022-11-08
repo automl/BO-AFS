@@ -1,0 +1,11 @@
+# @package _global_
+
+coco_suite_kwargs:
+  suite_name: bbob
+  suite_instance: ""
+  suite_options: "dimensions: 2,5"
+
+coco_instance:
+  function: 22
+  instance: 1
+  dimension: 2

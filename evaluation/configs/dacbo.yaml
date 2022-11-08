@@ -1,0 +1,19 @@
+# @package _global_
+env: DACBO-v1
+env_wrappers: []
+
+dacbo:
+  benchmark:
+    budget: null
+    budget_multiplier: 40
+    initial_budget_multiplier: 10
+    action_values: [u_EI, u_PI]    # explorative, exploitative
+    reward_type: incumbent_value
+    observation_types:
+      - remaining_steps
+  envtype: DACBOAcqEnv  # DACBOEIParEnv, DACBOAcqEnv
+  # benchmark_kwargs:
+  #   config_path: ""
+  #   fixed_gp_seed: true
+  #   reward_signal: incumbent_value  # log_regret # "average_function_values", "cumulative_incumbents", "incumbent", "log_incumbent", "log_regret"
+  #   no_smac_logs_to_file: true

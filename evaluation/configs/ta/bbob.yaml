@@ -1,0 +1,5 @@
+# @package _global_
+coco_instance:
+  function: 22
+  instance: 1
+  dimension: 2

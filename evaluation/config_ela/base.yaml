@@ -1,0 +1,36 @@
+defaults:
+  - slurm
+  - _self_
+  - override hydra/launcher: submitit_slurm
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+
+fn_rollout_data: "/home/benjamin/Dokumente/code/tmp/DAC-BO/evaluation/tmp/meta_learning_bbob/rollout_data.csv"
+fn_ela_features: "/home/benjamin/Dokumente/code/tmp/DAC-BO/evaluation/tmp/meta_learning_bbob/ela_features.csv"
+outdir: ./exp_sweep_ela
+mode: regression
+save_dir: null
+performance_name: regret_log_scaled
+metric: null
+cv: 5
+seed: 1
+test_size: 0.3
+scoring: "mse"
+ensemble_size: 20
+time_left_for_this_task: 600
+per_run_time_limit: 30
+performance_at_step: 100
+include:  # null
+  # classifier': null  # ["random_forest", "gradient_boosting", "gaussian_process"]
+   regressor: ["random_forest",]
+  # feature_preprocessor: null  # ["no_preprocessing"]
+  # balancing: null
+  # data_preprocessor: null 
+  
+
+hydra:
+  run:
+    dir: ${outdir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${outdir}/${now:%Y-%m-%d}/${now:%H-%M-%S}

@@ -1,0 +1,4 @@
+# @package _global_
+
+baseline: static (PI)
+policy_name: ${baseline}
