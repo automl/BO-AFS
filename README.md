@@ -1,5 +1,19 @@
 # Towards Automated Design of Bayesian Optimization via Exploratory Landscape Analysis
-This is the repository for the submission.
+This is the repository for the workshop [paper](https://arxiv.org/abs/2211.09678) at the MetaLearn workshop at NeurIPS 2022.
+If you use our work, please cite us :)
+
+```
+@misc{https://doi.org/10.48550/arxiv.2211.09678,
+  doi = {10.48550/ARXIV.2211.09678},  
+  url = {https://arxiv.org/abs/2211.09678},  
+  author = {Benjamins, Carolin and Jankovic, Anja and Raponi, Elena and van der Blom, Koen and Lindauer, Marius and Doerr, Carola},   
+  title = {Towards Automated Design of Bayesian Optimization via Exploratory Landscape Analysis},  
+  publisher = {arXiv},  
+  year = {2022},  
+  copyright = {Creative Commons Attribution Share Alike 4.0 International}
+}
+```
+
 
 ## Installation
 Create a fresh conda environment.
